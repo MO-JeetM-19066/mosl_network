@@ -1,0 +1,43 @@
+name: base_network
+description: "A new Flutter package project."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dio: ^5.8.0+1
+  intl : ^0.19.0
+  dio_brotli_transformer: ^2.0.0
+  dio_http2_adapter: 2.6.0
+  retry: ^3.1.2
+  pretty_dio_logger: ^1.4.0
+  sentry_flutter: ^8.14.2
+  sentry_dio: ^8.14.2
+  protobuf: ^4.0.0
+  firebase_performance: ^0.10.1+5
+  firebase_performance_dio: ^0.7.1
+  path_provider: ^2.1.5
+  synchronized : ^3.3.1
+  share_plus: ^7.0.2
+  dio_cache_interceptor:
+    git:
+      url: https://github.com/mofsl-flutter/dio_cache_interceptor.git
+      ref: 590820f56664b3c3559c4a0f162c33de41e538f3
+      path: dio_cache_interceptor
+  velocity_x:
+    git:
+      url: https://github.com/jeetmotilaloswal/VelocityX.git
+      ref: stable_4.3.1_locale_release
+
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+
+dependency_overrides:
+  visibility_detector: ^0.4.0+2
+
+flutter:
