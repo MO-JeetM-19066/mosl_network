@@ -208,9 +208,7 @@ class DioImpl extends BaseDioClient {
   }
 
   @override
-  void callCleverTap(String s, Map<String, String> map) {
-
-  }
+  void callCleverTap(String s, Map<String, String> map) {}
 
   void writeLog(String message) {}
 }

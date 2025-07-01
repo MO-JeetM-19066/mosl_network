@@ -135,7 +135,7 @@ abstract class BaseDioClient with NetworkMixin, AuthMixin, MiscMixin {
         } on DioException catch (e) {
           final statusCode = e.response != null ? e.response?.statusCode : -1;
           sentryService.captureException(e, statusCode!);
-          onErrorOccurred(e,baseOptions.rawRequest);
+          onErrorOccurred(e, baseOptions.rawRequest);
           if (CancelToken.isCancel(e)) {
             throw DioRequestCancelledException();
           }
@@ -185,19 +185,16 @@ abstract class BaseDioClient with NetworkMixin, AuthMixin, MiscMixin {
     _dio.httpClientAdapter = getHttpAdapter(host);
   }
 
-  void callCleverTap(String s, Map<String, String> map) {}
-}
+  void callCleverTap(String s, Map<String, String> map);
 
-
-void printLongString(String text, {int chunkSize = 1020}) {
-  final pattern = RegExp('.{1,$chunkSize}', dotAll: true);
-  for (final match in pattern.allMatches(text)) {
-    debugPrint(match.group(0));
+  void printLongString(String text, {int chunkSize = 1020}) {
+    final pattern = RegExp('.{1,$chunkSize}', dotAll: true);
+    for (final match in pattern.allMatches(text)) {
+      debugPrint(match.group(0));
+    }
   }
 }
 
-void debugPrintLogBase(String message, bool isDebug) {
-  if (isDebug) {
-    debugPrint('[DEBUG LOG :: ] $message');
-  }
+String getFormatedDate(DateTime date) {
+  return DateFormat('dd-MM-yyyy HH:mm:ss.SSS a').format(date);
 }
